@@ -43,7 +43,7 @@ export default function HomePage() {
             <a href="#packages">VIEW PACKAGES</a>
             <a href="#about">ABOUT</a>
             <a href="#broker">UPGRADE TO BROKER</a>
-            <a href="#contact">CONTACT</a>
+            <a href="/contact">CONTACT</a>
             <a href="#login">LOGIN</a>
           </nav>
 
