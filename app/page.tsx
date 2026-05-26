@@ -25,22 +25,30 @@ export default function HomePage() {
   ];
 
   const courses = [
-    {
-      title: "Pre-License Courses",
-      text: "Start your real estate career with online pre-license education.",
-      icon: "📚",
+  {
+    title: "Pre-License Courses",
+    text: "Start your real estate career with online pre-license education.",
+    image:
+      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80",
+    icon: "📚",
   },
-    {
-      title: "Exam Preparation",
-      text: "Practice, review, and prepare for the real estate exam.",
-      icon: "🎓",
+
+  {
+    title: "Exam Preparation",
+    text: "Practice, review, and prepare for the real estate exam.",
+    image:
+      "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1200&q=80",
+    icon: "🎓",
   },
-    {
-      title: "Post-License Training",
-      text: "Advance your skills after becoming licensed.",
-      icon: "🏢",
+
+  {
+    title: "Post-License Training",
+    text: "Advance your skills after becoming licensed.",
+    image:
+      "https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?auto=format&fit=crop&w=1200&q=80",
+    icon: "🏢",
   },
-  ];
+];
 
   return (
     <main className="min-h-screen bg-[#061b34] text-white overflow-hidden">
