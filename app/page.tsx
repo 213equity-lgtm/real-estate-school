@@ -83,7 +83,7 @@ export default function HomePage() {
 
           <div className="flex flex-col sm:flex-row justify-center gap-5">
             <a
-              href="#packages"
+              href="/courses"
               className="bg-[#d4a63d] text-[#061b34] px-8 py-4 rounded-xl font-black inline-flex items-center justify-center gap-2"
             >
               View Course Packages <ArrowRight className="w-5 h-5" />
