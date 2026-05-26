@@ -28,18 +28,18 @@ export default function HomePage() {
     {
       title: "Pre-License Courses",
       text: "Start your real estate career with online pre-license education.",
-      icon: BookOpen,
-    },
+      icon: "📚",
+  },
     {
       title: "Exam Preparation",
       text: "Practice, review, and prepare for the real estate exam.",
-      icon: GraduationCap,
-    },
+      icon: "🎓",
+  },
     {
       title: "Post-License Training",
       text: "Advance your skills after becoming licensed.",
-      icon: Building2,
-    },
+      icon: "🏢",
+  },
   ];
 
   return (
