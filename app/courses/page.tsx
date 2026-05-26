@@ -1,35 +1,37 @@
-export default function CoursesPage() {
-  const courses = [
-    {
-      title: "California Real Estate Principles",
-      price: "$99",
-      image:
-        "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1200&auto=format&fit=crop",
-      description:
-        "Learn the fundamentals of California real estate and licensing requirements.",
-    },
-    {
-      title: "California Real Estate Practice",
-      price: "$119",
-      image:
-        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop",
-      description:
-        "Master contracts, negotiations, disclosures, and client representation.",
-    },
-    {
-      title: "Exam Preparation Package",
-      price: "$149",
-      image:
-        "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1200&auto=format&fit=crop",
-      description:
-        "Practice exams, review videos, and study materials to help you pass.",
-    },
-  ];
+"use client";
 
+import Image from "next/image";
+
+const courses = [
+  {
+    title: "California Real Estate Principles",
+    price: "$99",
+    image: "/classroom.jpg",
+    description:
+      "DRE-approved course covering the fundamentals of California real estate.",
+  },
+  {
+    title: "California Real Estate Practice",
+    price: "$119",
+    image: "/classroom.jpg",
+    description:
+      "Learn contracts, disclosures, negotiations, and real-world applications.",
+  },
+  {
+    title: "Exam Preparation Package",
+    price: "$149",
+    image: "/classroom.jpg",
+    description:
+      "Practice exams, review videos, and study materials to help you pass.",
+  },
+];
+
+export default function CoursesPage() {
   return (
     <main className="min-h-screen bg-[#041326] text-white">
+      {/* HEADER */}
       <header className="border-b border-white/10 bg-[#061b34]">
-        <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
           <h1 className="text-2xl font-bold">
             Equity <span className="text-[#d4a63d]">Realty</span>
           </h1>
@@ -38,52 +40,60 @@ export default function CoursesPage() {
             href="/"
             className="text-sm hover:text-[#d4a63d] transition"
           >
-            ← Back Home
+            Back Home
           </a>
         </div>
       </header>
 
-      <section className="max-w-7xl mx-auto px-6 py-20">
-        <h2 className="text-5xl font-black mb-4">
+      {/* HERO */}
+      <section className="py-20 px-6 text-center">
+        <h2 className="text-5xl font-black mb-6">
           Real Estate Courses
         </h2>
 
-        <p className="text-white/70 mb-14 text-lg">
-          DRE-approved online courses for California real estate students.
+        <p className="text-white/70 max-w-2xl mx-auto text-lg">
+          California DRE-approved online real estate courses designed
+          for future agents and brokers.
         </p>
+      </section>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {courses.map((course, idx) => (
-            <div
-              key={idx}
-              className="bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:scale-105 transition duration-300"
-            >
-              <img
+      {/* COURSES */}
+      <section className="max-w-7xl mx-auto px-6 pb-20 grid md:grid-cols-3 gap-8">
+        {courses.map((course, index) => (
+          <div
+            key={index}
+            className="bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:scale-105 transition duration-300"
+          >
+            <div className="relative h-64">
+              <Image
                 src={course.image}
                 alt={course.title}
-                className="h-60 w-full object-cover"
+                fill
+                className="object-cover"
               />
+            </div>
 
-              <div className="p-6">
-                <h3 className="text-2xl font-bold mb-2">
-                  {course.title}
-                </h3>
+            <div className="p-6">
+              <h3 className="text-2xl font-bold mb-3">
+                {course.title}
+              </h3>
 
-                <p className="text-[#d4a63d] text-xl font-bold mb-4">
+              <p className="text-white/70 mb-5">
+                {course.description}
+              </p>
+
+              <div className="flex items-center justify-between">
+                <span className="text-3xl font-black text-[#d4a63d]">
                   {course.price}
-                </p>
+                </span>
 
-                <p className="text-white/70 mb-6">
-                  {course.description}
-                </p>
-
-                <button className="bg-[#d4a63d] text-black px-5 py-3 rounded-xl font-bold hover:bg-yellow-400 transition">
-                  Enroll Now
+                <button className="bg-[#d4a63d] text-black px-5 py-3 rounded-xl font-bold hover:scale-105 transition">
+                  Enroll
                 </button>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </section>
     </main>
   );
