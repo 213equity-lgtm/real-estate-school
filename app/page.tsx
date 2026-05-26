@@ -89,9 +89,9 @@ export default function HomePage() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage:
-              "linear-gradient(90deg, rgba(6,27,52,.96), rgba(6,27,52,.82), rgba(6,27,52,.45)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=80')",
-          }}
+  backgroundImage:
+    "linear-gradient(90deg, rgba(6,27,52,.96), rgba(6,27,52,.82), rgba(6,27,52,.45)), url('/classroom.jpg')",
+}}
         />
 
         <div className="absolute top-32 right-24 w-[420px] h-[420px] bg-[#d4a63d]/20 rounded-full blur-3xl glow-move" />
