@@ -1,224 +1,300 @@
 "use client";
 
-export default function Home() {
+import React from "react";
+import {
+  ArrowRight,
+  BookOpen,
+  CheckCircle,
+  Clock,
+  GraduationCap,
+  Headphones,
+  Home,
+  Mail,
+  Phone,
+  ShieldCheck,
+  Star,
+  Trophy,
+  Users,
+} from "lucide-react";
+
+export default function HomePage() {
+  const courses = [
+    {
+      title: "Pre-License Courses",
+      desc: "Start your real estate career with flexible online pre-license education.",
+      image:
+        "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80",
+      icon: BookOpen,
+    },
+    {
+      title: "Exam Preparation",
+      desc: "Practice questions, study tools, and review support to help you prepare.",
+      image:
+        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80",
+      icon: GraduationCap,
+    },
+    {
+      title: "New Agent Training",
+      desc: "Learn practical real estate skills, client communication, and career basics.",
+      image:
+        "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80",
+      icon: Home,
+    },
+  ];
+
+  const benefits = [
+    { title: "100% Online", text: "Study on your own schedule", icon: Clock },
+    { title: "Course Support", text: "Guidance for future agents", icon: Headphones },
+    { title: "Career Focused", text: "Built for real estate success", icon: Trophy },
+    { title: "Compliance Minded", text: "Designed with school requirements in mind", icon: ShieldCheck },
+  ];
+
   return (
-    <main className="min-h-screen bg-[#071b3a] text-white overflow-hidden">
-      {/* NAV */}
-      <nav className="fixed top-0 left-0 w-full z-50 bg-[#071b3a]/90 backdrop-blur border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="text-2xl font-bold text-[#d4af37]">Equity Realty</div>
-          <div className="hidden md:flex gap-8 text-sm">
-            <a href="#courses" className="hover:text-[#d4af37]">Courses</a>
-            <a href="#requirements" className="hover:text-[#d4af37]">Requirements</a>
-            <a href="#packages" className="hover:text-[#d4af37]">Packages</a>
-            <a href="#contact" className="hover:text-[#d4af37]">Contact</a>
+    <main className="min-h-screen bg-[#061b34] text-white overflow-hidden">
+      <style jsx global>{`
+        @keyframes floatUp {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-14px); }
+        }
+        @keyframes glowMove {
+          0%, 100% { opacity: 0.35; transform: scale(1); }
+          50% { opacity: 0.8; transform: scale(1.08); }
+        }
+        .float-up { animation: floatUp 5s ease-in-out infinite; }
+        .glow-move { animation: glowMove 4s ease-in-out infinite; }
+      `}</style>
+
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#061b34]/90 backdrop-blur-xl border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+          <nav className="hidden lg:flex gap-8 text-sm font-semibold text-white/80">
+            <a href="#" className="text-[#d4a63d]">Home</a>
+            <a href="#courses" className="hover:text-[#d4a63d]">Get License</a>
+            <a href="#courses" className="hover:text-[#d4a63d]">Exam Prep</a>
+            <a href="#about" className="hover:text-[#d4a63d]">About</a>
+            <a href="#contact" className="hover:text-[#d4a63d]">Contact</a>
+          </nav>
+
+          <div className="flex items-center gap-3 ml-auto">
+            <div className="w-11 h-11 rounded-xl bg-[#d4a63d] flex items-center justify-center">
+              <Home className="w-6 h-6 text-[#061b34]" />
+            </div>
+            <div className="text-2xl font-black">
+              Equity <span className="text-[#d4a63d]">Realty</span>
+            </div>
           </div>
-          <button className="bg-[#d4af37] text-[#071b3a] px-5 py-2 rounded-full font-semibold">
-            Enroll Now
-          </button>
         </div>
-      </nav>
+      </header>
 
-      {/* HERO */}
-      <section className="relative pt-32 pb-24 px-6">
-        <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1600')] bg-cover bg-center" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#071b3a] via-[#071b3a]/90 to-[#071b3a]/60" />
+      <section className="relative min-h-screen flex items-center pt-24">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage:
+              "linear-gradient(90deg, rgba(6,27,52,.96), rgba(6,27,52,.82), rgba(6,27,52,.45)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=80')",
+          }}
+        />
 
-        <div className="relative max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <div className="absolute top-32 right-24 w-[420px] h-[420px] bg-[#d4a63d]/20 rounded-full blur-3xl glow-move" />
+
+        <div className="relative max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-14 items-center">
           <div>
-            <p className="text-[#d4af37] font-semibold mb-4 animate-pulse">
-              California Real Estate License Online
-            </p>
-            <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
-              Start Your Real Estate Career with Confidence
+            <div className="inline-flex items-center gap-2 border border-[#d4a63d]/40 bg-[#d4a63d]/10 px-5 py-2 rounded-full text-sm font-bold text-[#d4a63d] mb-8">
+              <Star className="w-4 h-4 fill-current" />
+              ONLINE REAL ESTATE SCHOOL
+            </div>
+
+            <h1 className="text-5xl md:text-7xl font-black leading-tight mb-7">
+              Your Future in <br />
+              <span className="text-[#d4a63d]">Real Estate</span> <br />
+              Starts Here
             </h1>
-            <p className="text-lg text-white/80 mb-8">
-              Online real estate courses designed to help future agents complete their education, prepare for the exam, and begin their career path.
+
+            <p className="text-lg md:text-xl text-white/80 leading-relaxed max-w-2xl mb-9">
+              A premium online real estate education website concept for licensing,
+              exam preparation, and new agent training under Equity Realty.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-[#d4af37] text-[#071b3a] px-8 py-4 rounded-full font-bold shadow-lg hover:scale-105 transition">
-                View Course Packages
-              </button>
-              <button className="border border-white/30 px-8 py-4 rounded-full font-semibold hover:bg-white/10 transition">
-                Learn Requirements
-              </button>
+              <a
+                href="#courses"
+                className="bg-[#d4a63d] text-[#061b34] px-8 py-4 rounded-2xl font-black inline-flex items-center justify-center gap-2 hover:scale-105 transition"
+              >
+                View Courses <ArrowRight className="w-5 h-5" />
+              </a>
+
+              <a
+                href="#contact"
+                className="border border-white/25 px-8 py-4 rounded-2xl font-bold inline-flex items-center justify-center gap-2 hover:bg-white/10 transition"
+              >
+                <Phone className="w-5 h-5" />
+                Speak With Advisor
+              </a>
+            </div>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-12">
+              {benefits.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <div key={item.title} className="bg-white/10 border border-white/10 rounded-2xl p-5 backdrop-blur">
+                    <Icon className="w-8 h-8 text-[#d4a63d] mb-4" />
+                    <h3 className="font-black">{item.title}</h3>
+                    <p className="text-sm text-white/70">{item.text}</p>
+                  </div>
+                );
+              })}
             </div>
           </div>
 
-          <div className="bg-white/10 backdrop-blur rounded-3xl p-8 border border-white/20 shadow-2xl animate-float">
-            <h2 className="text-3xl font-bold mb-6 text-[#d4af37]">Fast & Easy Online Learning</h2>
-            <div className="space-y-4">
-              {[
-                "DRE-style course structure",
-                "Self-paced online lessons",
-                "Exam preparation support",
-                "Beginner-friendly content",
-                "Real estate career guidance",
-              ].map((item) => (
-                <div key={item} className="flex items-center gap-3">
-                  <span className="w-3 h-3 bg-[#d4af37] rounded-full" />
-                  <p>{item}</p>
+          <div className="hidden lg:block float-up">
+            <div className="bg-white/10 border border-white/10 backdrop-blur-2xl rounded-[2rem] p-8 shadow-2xl">
+              <img
+                src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1200&q=80"
+                alt="Modern real estate home"
+                className="rounded-3xl h-[390px] object-cover w-full"
+              />
+
+              <div className="mt-8 bg-[#061b34]/90 border border-[#d4a63d]/30 rounded-3xl p-7">
+                <h2 className="text-3xl font-black mb-4">
+                  Unlock Your <span className="text-[#d4a63d]">Potential</span>
+                </h2>
+                <div className="space-y-3 text-white/80">
+                  {["Flexible Learning", "Expert Support", "Exam Preparation", "Career Training"].map((text) => (
+                    <p key={text} className="flex items-center gap-3">
+                      <CheckCircle className="w-5 h-5 text-[#d4a63d]" />
+                      {text}
+                    </p>
+                  ))}
                 </div>
-              ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* FEATURES */}
-      <section id="courses" className="py-20 px-6 bg-white text-[#071b3a]">
-        <div className="max-w-7xl mx-auto text-center">
-          <p className="text-[#d4af37] font-bold mb-3">COURSE FEATURES</p>
-          <h2 className="text-4xl font-bold mb-12">
-            Everything You Need to Begin
-          </h2>
+      <section id="courses" className="bg-white text-[#061b34] py-24">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <p className="text-[#d4a63d] font-black mb-3">ONLINE REAL ESTATE COURSES</p>
+            <h2 className="text-4xl md:text-5xl font-black">
+              Choose Your Path to Success
+            </h2>
+            <p className="text-slate-600 mt-4 text-lg">
+              Course sections designed for future real estate professionals.
+            </p>
+          </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Real Estate Principles",
-                text: "Learn agency, contracts, finance, appraisal, fair housing, and key real estate fundamentals.",
-              },
-              {
-                title: "Real Estate Practice",
-                text: "Understand transactions, marketing, escrow, disclosures, property management, and client service.",
-              },
-              {
-                title: "Exam Preparation",
-                text: "Prepare with practice questions, review materials, and guided study support.",
-              },
-            ].map((card) => (
-              <div key={card.title} className="p-8 rounded-3xl shadow-xl border hover:-translate-y-2 transition bg-white">
-                <div className="h-40 rounded-2xl mb-6 bg-gradient-to-br from-[#071b3a] to-[#d4af37]" />
-                <h3 className="text-2xl font-bold mb-4">{card.title}</h3>
-                <p className="text-gray-600">{card.text}</p>
-              </div>
-            ))}
+            {courses.map((course) => {
+              const Icon = course.icon;
+              return (
+                <div
+                  key={course.title}
+                  className="group rounded-3xl overflow-hidden shadow-xl hover:-translate-y-3 hover:shadow-2xl transition duration-300 bg-white border"
+                >
+                  <div className="relative">
+                    <img src={course.image} alt={course.title} className="h-64 w-full object-cover" />
+                    <div className="absolute -bottom-8 left-8 w-16 h-16 rounded-2xl bg-[#d4a63d] flex items-center justify-center shadow-xl">
+                      <Icon className="w-8 h-8 text-[#061b34]" />
+                    </div>
+                  </div>
+
+                  <div className="p-8 pt-12">
+                    <h3 className="text-2xl font-black mb-4">{course.title}</h3>
+                    <p className="text-slate-600 leading-relaxed mb-6">{course.desc}</p>
+                    <button className="text-[#0b4a86] font-black flex items-center gap-2">
+                      Explore Courses <ArrowRight className="w-4 h-4" />
+                    </button>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* REQUIREMENTS */}
-      <section id="requirements" className="py-20 px-6 bg-[#f7f4ec] text-[#071b3a]">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <section id="about" className="bg-[#061b34] py-24">
+        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+          <img
+            src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80"
+            alt="Students learning online"
+            className="rounded-[2rem] shadow-2xl h-[430px] w-full object-cover"
+          />
+
           <div>
-            <p className="text-[#d4af37] font-bold mb-3">LICENSE REQUIREMENTS</p>
-            <h2 className="text-4xl font-bold mb-6">
-              How to Get Your California Real Estate License
+            <p className="text-[#d4a63d] font-black mb-3">WHY EQUITY REALTY</p>
+            <h2 className="text-4xl md:text-5xl font-black mb-6">
+              Built for Future Real Estate Professionals
             </h2>
-            <p className="text-gray-700 mb-6">
-              Students generally need to complete required real estate courses, apply for the state exam, pass the exam, and work with a broker after licensing.
+            <p className="text-white/75 text-lg leading-relaxed mb-8">
+              This website is designed as a professional front-end landing page for
+              an online real estate school. It can later be expanded with student
+              login, payment processing, course tracking, quizzes, and certificate generation.
             </p>
 
-            <div className="space-y-4">
-              {[
-                "Be 18 years of age or older",
-                "Complete required real estate education",
-                "Apply for the California state exam",
-                "Pass the state exam",
-                "Begin your career with brokerage support",
-              ].map((step, index) => (
-                <div key={step} className="flex gap-4 items-start">
-                  <div className="bg-[#071b3a] text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">
-                    {index + 1}
-                  </div>
-                  <p className="font-medium">{step}</p>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {["Student Dashboard", "Online Enrollment", "Course Modules", "Certificate Workflow"].map((item) => (
+                <div key={item} className="bg-white/10 border border-white/10 rounded-2xl p-5 flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-[#d4a63d]" />
+                  <span>{item}</span>
                 </div>
               ))}
             </div>
           </div>
-
-          <div className="rounded-3xl overflow-hidden shadow-2xl">
-            <img
-              src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1200"
-              alt="Real estate education"
-              className="w-full h-[430px] object-cover"
-            />
-          </div>
         </div>
       </section>
 
-      {/* PACKAGES */}
-      <section id="packages" className="py-20 px-6 bg-[#071b3a]">
-        <div className="max-w-7xl mx-auto text-center">
-          <p className="text-[#d4af37] font-bold mb-3">COURSE PACKAGES</p>
-          <h2 className="text-4xl font-bold mb-12">
-            Choose the Right Package
+      <section className="bg-white text-[#061b34] py-20">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-6">
+          {[
+            ["100%", "Online Concept"],
+            ["24/7", "Flexible Access"],
+            ["3+", "Course Categories"],
+            ["Career", "Focused Design"],
+          ].map(([number, label]) => (
+            <div key={label} className="text-center rounded-3xl bg-[#f7f4ec] p-8 shadow-sm">
+              <h3 className="text-4xl font-black text-[#d4a63d] mb-2">{number}</h3>
+              <p className="font-bold">{label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="contact" className="bg-[#061b34] text-white py-24">
+        <div className="max-w-5xl mx-auto px-6 text-center">
+          <Users className="w-14 h-14 text-[#d4a63d] mx-auto mb-6" />
+          <h2 className="text-4xl md:text-5xl font-black mb-6">
+            Ready to Start Your Real Estate School Website?
           </h2>
+          <p className="text-white/75 text-lg mb-8">
+            Contact Equity Realty to continue building the full online school platform.
+          </p>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              ["Basic", "$99", "Online course access"],
-              ["Gold", "$149", "Courses + exam prep"],
-              ["Platinum", "$199", "Full support + career tools"],
-            ].map(([name, price, desc]) => (
-              <div key={name} className="bg-white text-[#071b3a] rounded-3xl p-8 shadow-xl border-4 border-transparent hover:border-[#d4af37] transition">
-                <h3 className="text-2xl font-bold mb-3">{name}</h3>
-                <p className="text-5xl font-bold text-[#d4af37] mb-4">{price}</p>
-                <p className="text-gray-600 mb-8">{desc}</p>
-                <button className="w-full bg-[#071b3a] text-white py-4 rounded-full font-bold hover:bg-[#d4af37] hover:text-[#071b3a] transition">
-                  Enroll Now
-                </button>
-              </div>
-            ))}
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <a
+              href="mailto:213equity@gmail.com"
+              className="bg-[#d4a63d] text-[#061b34] px-8 py-4 rounded-2xl font-black inline-flex items-center justify-center gap-2"
+            >
+              <Mail className="w-5 h-5" />
+              Email Us
+            </a>
+
+            <a
+              href="tel:3105285240"
+              className="border border-white/25 px-8 py-4 rounded-2xl font-black inline-flex items-center justify-center gap-2"
+            >
+              <Phone className="w-5 h-5" />
+              Call Now
+            </a>
           </div>
         </div>
       </section>
 
-      {/* TESTIMONIALS */}
-      <section className="py-20 px-6 bg-white text-[#071b3a]">
-        <div className="max-w-6xl mx-auto text-center">
-          <p className="text-[#d4af37] font-bold mb-3">STUDENT REVIEWS</p>
-          <h2 className="text-4xl font-bold mb-12">
-            What Students Are Saying
-          </h2>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              "The courses were easy to follow and helped me feel prepared.",
-              "Great online program for anyone starting a real estate career.",
-              "Simple, organized, and very helpful for exam preparation.",
-            ].map((quote, i) => (
-              <div key={i} className="p-8 rounded-3xl bg-[#f7f4ec] shadow">
-                <p className="text-[#d4af37] text-2xl mb-4">★★★★★</p>
-                <p className="text-gray-700 italic">“{quote}”</p>
-              </div>
-            ))}
-          </div>
+      <footer className="bg-[#041326] border-t border-white/10 py-8">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between gap-4 text-sm text-white/60">
+          <p>© 2026 Equity Realty. All rights reserved.</p>
+          <p>Online real estate school landing page prototype.</p>
         </div>
-      </section>
-
-      {/* CTA */}
-      <section id="contact" className="py-20 px-6 bg-gradient-to-r from-[#071b3a] to-[#0d2f63] text-center">
-        <h2 className="text-4xl font-bold mb-6">
-          Ready to Start Your Real Estate Career?
-        </h2>
-        <p className="text-white/80 mb-8 max-w-2xl mx-auto">
-          Join Equity Realty’s online real estate education platform and take the first step toward becoming a licensed real estate professional.
-        </p>
-        <button className="bg-[#d4af37] text-[#071b3a] px-10 py-4 rounded-full font-bold hover:scale-105 transition">
-          Get Started Today
-        </button>
-      </section>
-
-      <footer className="py-8 text-center bg-[#041126] text-white/60">
-        © 2026 Equity Realty. All rights reserved.
       </footer>
-
-      <style jsx>{`
-        @keyframes float {
-          0%, 100% {
-            transform: translateY(0);
-          }
-          50% {
-            transform: translateY(-14px);
-          }
-        }
-        .animate-float {
-          animation: float 4s ease-in-out infinite;
-        }
-      `}</style>
     </main>
   );
 }
