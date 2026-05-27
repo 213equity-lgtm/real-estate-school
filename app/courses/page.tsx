@@ -41,9 +41,12 @@ export default function CoursesPage() {
   className="inline-block bg-[#061b34] text-white px-6 py-3 rounded-xl font-black"
 >
   View Package
+<a
+  href="/"
+  className="text-sm hover:text-[#d4a63d] transition"
+>
+  Back Home
 </a>
-            Back Home
-          </a>
         </div>
       </header>
 
