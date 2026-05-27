@@ -31,7 +31,7 @@ export default function UpgradeToBrokerPage() {
 
           <div className="border-4 border-dotted border-[#d4a63d] rounded-xl p-6 bg-white">
             <img
-              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=900&auto=format&fit=crop"
+              src="/broker-woman.png"
               alt="Broker License"
               className="w-full h-72 object-cover rounded-lg"
             />
