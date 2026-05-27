@@ -93,7 +93,7 @@ export default function HomePage() {
 
   </div>
 
-  <a href="#broker">UPGRADE TO BROKER</a>
+  <a href="/upgrade-to-broker">UPGRADE TO BROKER</a>
 
   <a href="/contact">CONTACT</a>
 
