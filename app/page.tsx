@@ -39,13 +39,67 @@ export default function HomePage() {
           </div>
 
           <nav className="hidden md:flex gap-8 text-sm font-bold text-[#0b3a67]">
-            <a href="#">HOME</a>
-            <a href="#packages">VIEW PACKAGES</a>
-            <a href="#about">ABOUT</a>
-            <a href="#broker">UPGRADE TO BROKER</a>
-            <a href="/contact">CONTACT</a>
-            <a href="#login">LOGIN</a>
-          </nav>
+
+  <a href="#">HOME</a>
+
+  <a href="#packages">VIEW PACKAGES</a>
+
+  {/* ABOUT DROPDOWN */}
+  <div className="relative group">
+
+    <button className="flex items-center gap-1 hover:text-[#d4a63d]">
+      ABOUT
+      <span>⌄</span>
+    </button>
+
+    <div className="absolute top-full left-0 hidden group-hover:block bg-white shadow-xl w-64 text-[#061b34] z-50">
+
+      <a
+        href="/our-school"
+        className="block px-6 py-4 border-b hover:bg-gray-100"
+      >
+        OUR SCHOOL
+      </a>
+
+      <a
+        href="/requirements"
+        className="block px-6 py-4 border-b hover:bg-gray-100"
+      >
+        REQUIREMENTS
+      </a>
+
+      <a
+        href="/faq"
+        className="block px-6 py-4 border-b hover:bg-gray-100"
+      >
+        F.A.Q.
+      </a>
+
+      <a
+        href="/exam-prep"
+        className="block px-6 py-4 border-b hover:bg-gray-100"
+      >
+        EXAM PREP
+      </a>
+
+      <a
+        href="/why-choose-us"
+        className="block px-6 py-4 hover:bg-gray-100"
+      >
+        WHY CHOOSE US?
+      </a>
+
+    </div>
+
+  </div>
+
+  <a href="#broker">UPGRADE TO BROKER</a>
+
+  <a href="/contact">CONTACT</a>
+
+  <a href="#login">LOGIN</a>
+
+</nav>
 
           <a
             href="tel:2134621983"
