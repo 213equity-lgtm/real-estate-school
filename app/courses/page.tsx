@@ -37,10 +37,12 @@ export default function CoursesPage() {
           </h1>
 
           <a
-  href="/real-estate-practice"
-  className="inline-block bg-[#061b34] text-white px-6 py-3 rounded-xl font-black"
+  href="/"
+  className="text-sm hover:text-[#d4a63d] transition"
 >
-  View Package
+  Back home
+</a>
+
 <a
   href="/"
   className="text-sm hover:text-[#d4a63d] transition"
